@@ -1,0 +1,40 @@
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <h5 class="text-white h4">Collapsed content</h5>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Hi! 🏳️‍🌈</h1>
+        <p class="lead text-muted">Tell me about the expense you're requesting...</p>
+        <p>
+        <form>
+          <div class="form-group">
+          <%= form_with model: @expense do |form| %>
+              <%= form.label 'Your name:' %>
+              <%= form.text_field :description, :class => 'form-control', :placeholder =>"example: Britney Spears" %>
+              <%= form.label 'Expense amount:' %>
+              <%= form.text_field :amount, :class => 'form-control', :placeholder =>"example: 500" %>
+              <%= form.label 'Expense description:' %>
+              <%= form.text_area :description, :class => 'form-control', :placeholder =>"example: 150 t-shirts with logo", size: "30x10" %>
+              <br>
+              <%= form.submit 'Submit Expense', :class => 'btn btn-primary' %>
+          <% end %>
+          </div>
+        </form>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,10 @@
+<br>
+<br>
+<% @expenses.each do |e| %>
+  <strong><%= e.description %></strong>
+  <%= e.amount %>
+  <%= e.category %>
+<% end %>
+<br>
+<br>
+Wanna to create a new request? Head on over <%= link_to 'here', new_expense_path %>.

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <main>
+          <div class="row py-lg-5">
+            <h1 class="fw-light">Hi! 🏳️‍🌈</h1>
+            <p>Tell me about the expense you're requesting...</p>
+            <p>
+            </p>
+            <form>
+              <div class="form-group">
+                <%= form_with model: @expense do |form| %>
+                  <%= form.label 'Your name:' %>
+                  <%= form.text_field :description, :class => 'form-control', :placeholder =>"Britney Spears" %>
+                  <%= form.label 'Expense category:' %>
+                  <%= form.select :category, @category_pillars, {:prompt => 'Select the expense category'}, {:class => 'form-select form-select'} %>
+                  <%= form.label 'Expense amount:' %>
+                  <%= form.text_field :amount, :class => 'form-control', :placeholder =>"500" %>
+                  <%= form.label 'Expense description:' %>
+                  <%= form.text_area :description, :class => 'form-control', :placeholder =>"150 t-shirts with logo", size: "30x10" %>
+                  <br>
+                  <%= form.submit 'Submit Expense', :class => 'btn btn-primary' %>
+                <% end %>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+</main>
+
